@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE config SYSTEM "./svn2rss.dtd">
+<config version="1.4">
+    <globalConfig>
+        <svnBinaryPath>svn</svnBinaryPath>
+        <cachingEnabled>true</cachingEnabled>
+        <defaultConfigSet>none</defaultConfigSet>
+    </globalConfig>
+    <configSets>
+        <configSet id="55c0b20c20e18">
+            <svnUrl>file:///data/svn/repositories/roberto_sgv/ciao</svnUrl>
+            <svnUsername></svnUsername>
+            <svnPassword></svnPassword>
+            <logAmount>25</logAmount>
+            <refreshInterval>60</refreshInterval>
+            <feedTitle>ciao SVN History</feedTitle>
+            <feedDescription>Browse the SVN-history of ciao</feedDescription>
+            <feedWithChangedFiles>true</feedWithChangedFiles>
+            <htmlViewTemplate>svn2rss.xhtml</htmlViewTemplate>
+        </configSet>
+    </configSets>
+</config>

@@ -1,0 +1,79 @@
+1. set up a LAMP (Linux, Apache2, MySQL, Php) machine.
+    if you use Ubuntu, you may follow the instructions of this nice tutorial: 
+    https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04
+
+2. install the following packages:
+
+    apache2
+    mysql-server libapache2-mod-auth-mysql php5-mysql
+    php5 libapache2-mod-php5 php5-mcrypt
+    phpmyadmin
+    git
+    subversion
+    unzip
+    gitweb
+    libapache2-mod-svn libapache2-mod-encoding
+    ruby-grack
+    libapache2-mod-python
+    libapache2-mod-fcgid
+    php5-ldap
+    libxml-rss-simplegen-perl libxml-opml-simplegen-perl
+
+3. create the following directories and chown them to www-data.www-data:
+
+    /etc/apache2/gitrepos
+    /etc/apache2/svnrepos
+
+    /data/svn/repositories
+    /data/git/repositories
+
+    /var/lib/svn/repositories
+
+4. add the following statements at the end of your apache2.conf:
+
+    # svngit
+    IncludeOptional svnrepos/*.conf
+    IncludeOptional gitrepos/*.conf
+
+5. enable the following Apache2 modules:
+
+    ldap
+    authnz_ldap
+    cgi alias env
+    fcgid auth_digest
+    rewrite
+    rewritelog
+
+6. modify your 000-default.conf in Apache2 so that it contains the following statements:
+
+    <Location />
+        Options None
+        AuthType Basic
+        AuthBasicProvider ldap
+        AuthName "<THE PROMPT DISPLAYED AT LOGIN>"          # for example "Welcome to mydomain's GITSVN. Use your LDAP account to login.";
+        AuthLDAPURL "<YOUR LDAP CONNECTION STRING>"         # for example "ldap://ldap.mydomain.net:389/dc=mydomain,dc=net?uid?sub?(objectClass=sambaSamAccount)";
+        Require valid-user
+    </Location>
+
+    <Directory "/usr/lib/git-core*">
+        Options ExecCGI Indexes
+        Order allow,deny
+        Allow from all
+        Require all granted
+    </Directory>
+    
+7. open phpmyadmin and:
+    a. create a database called gitsvn
+    b. take note of the user and password you choose. you will put them in config.php
+    c. execute the SQL file gitsvn.sql that will create the tables in the database
+    
+8. go to your /etc/www/html directory and unzip gitsvn.zip:
+    you have to chmod +x conditional_reload.sh
+
+9. create a crontab for the user root, containing this statement:
+
+    */1 * * * * /var/www/html/conditional_reload.sh
+    
+10. make a copy of config_example.php as config.php and fill it with your actual configuration data
+
+11. open the URL of your newly installed gitsvn server in a browser and enjoy

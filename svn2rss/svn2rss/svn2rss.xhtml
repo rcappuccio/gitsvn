@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of svn2rss.
+
+    (c) Stefan Idler, MulchProductions, sidler@mulchprod.de, http://www.mulchprod.de
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>svn2rss single commit view</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: #CFCFCF;
+                font-family: verdana, arial, helvetica;
+                font-size: 0.8em;
+            }
+
+            #contentWrapper { 
+                border: 1px solid #8F8F8F;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                border-radius: 7px;
+                padding: 10px;
+                margin: 10px 10px 0 10px;
+                background-color: #DFDFDF;
+            }
+
+            h1 {
+                border: 1px solid #8F8F8F;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                border-radius: 7px;
+                padding: 5px;
+                margin: 0px;
+                background-color: #FFFFFF;
+            }
+
+            h2 {
+                border: 1px solid #8F8F8F;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                border-radius: 7px;
+                padding: 5px;
+                margin-top: 10px;
+                background-color: #FFFFFF;
+            }
+
+            #detailWrapper {
+                border: 1px solid #8F8F8F;
+                -webkit-border-radius: 7px;
+                -moz-border-radius: 7px;
+                border-radius: 7px;
+                padding: 5px;
+                margin-top: 10px;
+                background-color: #FFFFFF;
+            }
+
+            #footer {
+                text-align: center;
+                font-size: 0.7em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="contentWrapper">
+            <h1>svn2rss single commit view</h1>
+            <h2>
+                %%revision%% by %%author%%
+            </h2>
+            <div id="detailWrapper">
+                <p>Date:<br />%%date%%</p>
+                <p>Commit-Message:<br />%%description%%</p>
+                <p>Changed Files:<br /><ul>%%changedfiles%%</ul></p>
+            </div>
+        </div>
+        <div id="footer"><a href="http://sourceforge.net/projects/svn2rss/">powered by svn2rss</a></div>
+    </body>
+</html>

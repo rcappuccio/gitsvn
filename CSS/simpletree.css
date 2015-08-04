@@ -1,0 +1,67 @@
+/* Just some base styles not needed for example to function */
+*, html { font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+body, form, ul, li, p, h1, h2, h3, h4, h5
+{
+	margin: 0;
+	padding: 0;
+}
+body { background-color: #FFFFFF; color: #000000; margin: 1em; }
+img { border: none; }
+p
+{
+	font-size: 1em;
+	margin: 0 0 1em 0;
+}
+
+html { font-size: 1.2em; /* IE hack */ }
+body { font-size: 0.8em; /* Sets base font size to 10px */ }
+ul { font-size: 1em; /* IE hack */ }
+table { font-size: 1em; /* IE hack */ }
+input, select, textarea, th, td { font-size: 1em; }
+
+.treeview ul{ /*CSS for Simple Tree Menu*/
+margin: 0;
+padding: 0.2em;
+}
+
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+background: white url(list.gif) no-repeat left center;
+list-style-type: none;
+padding-left: 22px;
+margin-bottom: 3px;
+}
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+background: white url(expand.png) no-repeat left 1px;
+cursor: hand !important;
+cursor: pointer !important;
+}
+
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+display: none; /*Hide them by default. Don't delete. */
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+cursor: default;
+}
+
+div.repository
+{
+    float: Left;
+    width: 200px;
+    margin-top: 3px;*/
+}
+
+div.repository2
+{
+    float: Left;
+    width: 200px;
+}
+
+.inactive { 
+    filter: alpha(opacity=50); 
+    -moz-opacity:0.50; 
+    opacity:0.5;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of svn2rss.
+
+    (c) Stefan Idler, MulchProductions, sidler@mulchprod.de, http://www.mulchprod.de
+-->
+
+
+<!ELEMENT config (globalConfig, configSets) >
+<!ATTLIST config 
+    version CDATA #REQUIRED
+>
+
+<!ELEMENT globalConfig (svnBinaryPath, cachingEnabled, defaultConfigSet) >
+
+<!ATTLIST globalConfig
+    defaultConfigSet IDREF #IMPLIED
+>
+<!ELEMENT svnBinaryPath (#PCDATA)>
+<!ELEMENT cachingEnabled (#PCDATA)>
+<!ELEMENT defaultConfigSet (#PCDATA)>
+
+
+
+<!ELEMENT configSets (configSet)+>
+<!ELEMENT configSet (svnUrl, svnUsername, svnPassword, logAmount, refreshInterval, feedTitle, feedDescription, feedWithChangedFiles, htmlViewTemplate)>
+<!ATTLIST configSet
+    id ID #REQUIRED
+>
+
+<!ELEMENT svnUrl (#PCDATA)>
+<!ELEMENT svnUsername (#PCDATA)>
+<!ELEMENT svnPassword (#PCDATA)>
+<!ELEMENT logAmount (#PCDATA)>
+<!ELEMENT refreshInterval (#PCDATA)>
+<!ELEMENT feedTitle (#PCDATA)>
+<!ELEMENT feedDescription (#PCDATA)>
+<!ELEMENT feedWithChangedFiles (#PCDATA)>
+<!ELEMENT htmlViewTemplate (#PCDATA)>
