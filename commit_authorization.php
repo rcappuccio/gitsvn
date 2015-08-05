@@ -13,6 +13,16 @@ if ($action == "") $action = $_GET['action'];
 
 $logged_user = strtolower($_SERVER['PHP_AUTH_USER']);
 
+if ( $path == "\\" )
+{
+    // we leave it as it is
+}
+else
+{
+    // we remove the initial "/"
+    $path = ltrim($path, '/');
+}
+
 if ( $action == "delete" ) 
 {
     $repo_id = $_GET['repo_id'];
