@@ -67,7 +67,7 @@
     b. take note of the user and password you choose. you will put them in config.php
     c. let phpmyadmin execute the SQL file gitsvn.sql. it will create the tables in the database
     
-8. go to your /etc/www/html directory and copy all project files in the directory:
+8. go to your /var/www/html directory and copy all project files in the directory:
     you may have to manually chmod +x conditional_reload.sh
 
 9. create a crontab for the user root, containing this statement:
