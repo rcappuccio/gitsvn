@@ -74,7 +74,7 @@ INSTALLATION:
     b. take note of the user and password you choose in order to put them in config.php
     c. let phpmyadmin execute the SQL file gitsvn.sql. it will create the tables in the database
     
-8. go to your /etc/www/html directory and copy all project files in the directory
+8. go to your /var/www/html directory and copy all project files in the directory
     (you can download a zip file from Github and unzip it into the directory)
    change the owner of all files (also in the subdirectories) to www-data.www-data (chown -R www-data.www-data *)
    give the execution privilege to file conditional_reload.sh (chmod +x conditional_reload.sh)
