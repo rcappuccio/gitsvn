@@ -45,8 +45,8 @@ $path = $user_id;
 
 // If the user clicked on "Create", we get the "repository" field from the form
 // and create the repository
-$repo = $_POST['repository'];
-$type = $_POST['repo_type'];
+$repo = isset($_POST['repository']) ? $_POST['repository'] : '';
+$type = isset($_POST['repo_type']) ? $_POST['repo_type'] : '';
 
 if ( $repo ) {
     # clean up the repository name
@@ -581,7 +581,7 @@ print "<li>SVN\n";
 print "     <ul>\n";
 
 $previous_username = "x";
-$al_least_one = False;
+$at_least_one = False;
 
 while( $row = mysql_fetch_array( $result1 ) )
 {

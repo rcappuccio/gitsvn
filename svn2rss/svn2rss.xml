@@ -7,14 +7,14 @@
         <defaultConfigSet>none</defaultConfigSet>
     </globalConfig>
     <configSets>
-        <configSet id="55c0b20c20e18">
-            <svnUrl>file:///data/svn/repositories/roberto_sgv/ciao</svnUrl>
+        <configSet id="55c20b41545ae">
+            <svnUrl>file:///data/svn/repositories/roberto_sgv/test</svnUrl>
             <svnUsername></svnUsername>
             <svnPassword></svnPassword>
             <logAmount>25</logAmount>
             <refreshInterval>60</refreshInterval>
-            <feedTitle>ciao SVN History</feedTitle>
-            <feedDescription>Browse the SVN-history of ciao</feedDescription>
+            <feedTitle>test SVN History</feedTitle>
+            <feedDescription>Browse the SVN-history of test</feedDescription>
             <feedWithChangedFiles>true</feedWithChangedFiles>
             <htmlViewTemplate>svn2rss.xhtml</htmlViewTemplate>
         </configSet>
