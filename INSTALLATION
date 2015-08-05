@@ -21,13 +21,15 @@
 
 3. create the following directories and chown them to www-data.www-data:
 
-    /etc/apache2/gitrepos
-    /etc/apache2/svnrepos
+    mkdir /etc/apache2/gitrepos
+    mkdir /etc/apache2/svnrepos
 
-    /data/svn/repositories
-    /data/git/repositories
+    mkdir -p /data/svn/repositories
+    mkdir -p /data/git/repositories
 
-    /var/lib/svn/repositories
+    mkdir -p /var/lib/svn/repositories
+    
+    chown -R ww-data.www-data /etc/apache2/gitrepos /etc/apache2/svnrepos /data/svn/repositories /data/git/repositories /var/lib/svn/repositories
 
 4. add the following statements at the end of your apache2.conf:
 
