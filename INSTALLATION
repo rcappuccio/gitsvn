@@ -1,3 +1,6 @@
+
+INSTALLATION:
+
 1. set up a LAMP (Linux, Apache2, MySQL, Php) machine.
     if you use Ubuntu, you may follow the instructions of this nice tutorial: 
     https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04
